@@ -9,7 +9,7 @@ public class Button extends JButton implements MouseListener{
 
 	private static final long serialVersionUID = 1L;
 	
-	public static enum actions { GENERATE_KEYS, EXPORTS_KEYS, IMPORT_PUBLIC_KEY, IMPORT_PRIVATE_KEY, CRYPT, DECRYPT, SHOW_KEYS_INFO }
+	public static enum actions { GENERATE_KEYS, EXPORTS_KEYS, IMPORT_PUBLIC_KEY, IMPORT_PRIVATE_KEY, ENCRYPT, DECRYPT, SHOW_KEYS_INFO }
 	
 	private actions action;
 	private MainWindow mainWindow;

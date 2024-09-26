@@ -56,7 +56,7 @@ public class MainWindow extends JFrame {
 
 		JPanel cryptBox = new JPanel();
 		cryptBox.setLayout(new BorderLayout());
-		cryptBox.add(new Button(actions.CRYPT, this), BorderLayout.NORTH);
+		cryptBox.add(new Button(actions.ENCRYPT, this), BorderLayout.NORTH);
 		this.plainText = new JTextArea();
 		plainText.setLineWrap(true);
 		plainText.setWrapStyleWord(true);
@@ -93,7 +93,7 @@ public class MainWindow extends JFrame {
 
 	public void performAction(Button.actions action) {
 		switch (action) {
-		case CRYPT:
+		case ENCRYPT:
 			if (this.publicKey == null) {
 				JOptionPane.showMessageDialog(this, "Public key not selected", "Public key's missing",
 						JOptionPane.ERROR_MESSAGE);
