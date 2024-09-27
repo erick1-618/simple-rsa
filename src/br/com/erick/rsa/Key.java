@@ -20,16 +20,16 @@ public class Key implements Serializable{
 	private LocalDateTime expirationDate;
 	
 	public BigInteger getX() {
-		if(expirationDate.isBefore(LocalDateTime.now())) brokeKey();
+		if(expirationDate.isBefore(LocalDateTime.now())) breakKey();
 		return x;
 	}
 
 	public BigInteger getY() {
-		if(expirationDate.isBefore(LocalDateTime.now())) brokeKey();
+		if(expirationDate.isBefore(LocalDateTime.now())) breakKey();
 		return y;
 	}
 	
-	public void brokeKey() {
+	public void breakKey() {
 		this.x = null;
 		this.y = null;
 	}
