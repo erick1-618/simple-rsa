@@ -99,8 +99,8 @@ public class MainWindow extends JFrame {
 						JOptionPane.ERROR_MESSAGE);
 				break;
 			}
-			if(this.publicKey.isExpired()) {
-				JOptionPane.showMessageDialog(this, "Public key has expired", "Encryption error",
+			if(this.publicKey.isValid()) {
+				JOptionPane.showMessageDialog(this, "Public key not valid", "Encryption error",
 						JOptionPane.ERROR_MESSAGE);
 				break;				
 			}
@@ -115,8 +115,8 @@ public class MainWindow extends JFrame {
 						JOptionPane.ERROR_MESSAGE);
 				break;
 			}
-			if(this.privateKey.isExpired()) {
-				JOptionPane.showMessageDialog(this, "Private key has expired", "Decryption error",
+			if(this.privateKey.isValid()) {
+				JOptionPane.showMessageDialog(this, "Private key not valid", "Decryption error",
 						JOptionPane.ERROR_MESSAGE);
 				break;				
 			}
@@ -241,6 +241,10 @@ public class MainWindow extends JFrame {
 			}
 			break;
 		case SHOW_KEYS_INFO:
+			if(publicKey == null || privateKey == null) {
+				JOptionPane.showMessageDialog(this, "Public or private key not selected", "Error", JOptionPane.ERROR_MESSAGE);
+				break;
+			}
 			if(keysInfoFrame != null) {
 				if(keysInfoFrame.isShowing()) {
 					keysInfoFrame.dispose();
